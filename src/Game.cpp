@@ -13,3 +13,8 @@ void Game::startGame() {
   
     std::cout << "Game started! Player 1 goes first." << std::endl;
 }
+// Switch to the other player's turn
+void Game::switchTurn() {
+    m_current_turn = (m_current_turn == 1) ? 2 : 1;
+    std::cout << "Now it is Player " << m_current_turn << "'s turn." << std::endl;
+}
