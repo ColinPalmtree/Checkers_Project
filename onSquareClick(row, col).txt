@@ -1,0 +1,22 @@
+onSquareClick(row, col)
+
+1. check whose turn it is
+
+2. get the clicked square
+
+3. if square is empty
+   - break / return
+
+4. get the piece from that square
+
+5. if piece is not my piece
+   - break / return
+
+6. mark/select that piece
+
+7. run getValidMoves(row, col)
+
+8. if valid moves list is empty
+   - break / return
+
+9. wait for next click

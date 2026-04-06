@@ -1,0 +1,26 @@
+getValidMoves(row, col)
+
+1. get the square at row, col
+
+2. if square is empty
+   - break / return
+
+3. get the piece from that square
+
+4. read piece info
+   - color
+   - isKing
+
+5. clear old valid moves list
+
+6. check allowed directions based on:
+   - color
+   - king or not
+
+7. for each direction:
+   - if checked square is out of bounds
+     - break that direction
+   - if checked square is empty
+     - add as normal valid move
+   - if checked square has a piece
+     - run canJump(...)

@@ -1,0 +1,43 @@
+movePiece(startRow, startCol, endRow, endCol, justJumped)
+
+1. get moving piece from start square
+
+2. if no piece there
+   - break / return
+
+3. check if endRow, endCol is in valid moves list
+
+4. if not in valid moves list
+   - break / return
+
+5. move piece to destination square
+
+6. clear source square
+
+7. check if move was a jump
+   - if not, end
+
+8. if jump:
+   - find middle square
+   - get middle piece
+
+9. if no middle piece
+   - break / return
+
+10. if middle piece is not enemy
+   - break / return
+
+11. remove middle piece
+
+12. set justJumped = true
+
+13. clear valid moves
+
+14. check for more jumps from new position
+
+15. if more jumps exist
+   - wait for next click
+   - only allow jump moves
+
+16. if no more jumps exist
+   - end jump chain
