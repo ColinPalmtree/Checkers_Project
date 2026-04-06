@@ -6,8 +6,9 @@ class KingPiece : public Piece
 {
 public:
     // the constructor passes everything to pieces constructor
-
     KingPiece(int playerNum, const std::string& color, int row, int col);
+    virtual ~KingPiece() = default; // virtual destructor
+
     void move(int toRow, int toCol) override;
     // returns forward AND backward diagonal squares (kings move both directions)
 

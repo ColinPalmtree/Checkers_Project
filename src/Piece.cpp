@@ -2,6 +2,10 @@
 #include <string>
 #include "Piece.h"
 
+Piece::Piece(int player_num, std::string color, int row, int col) :
+	m_player_num{ player_num }, m_color{ color }, m_row{ row }, m_col{ col } 
+    { }
+
 void Piece::setNum(player_num) { m_player_num = player_num; }
 int Piece::getNum() { return m_player_num; }
 

@@ -5,6 +5,9 @@
 
 class Piece {
 public:
+	// constructor
+	Piece(int player_num, std::string color, int row, int col);
+
 	void setNum(player_num);
 	int getNum();
 
