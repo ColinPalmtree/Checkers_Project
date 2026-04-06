@@ -1,3 +1,4 @@
+// Template not final just example can change
 #include "Game.h"
 #include <iostream>
 
