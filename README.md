@@ -44,7 +44,7 @@ The game enforces standard Checkers rules, supports piece movement, captures, ki
 | Error messages for invalid moves | L |
 | Highlight selected piece & valid moves | M |
 
-## 🛠️ Resources & Tools
+##  Resources & Tools
 - C++  
 - SFML (Simple and Fast Multimedia Library)  
 - GitHub for version control  
