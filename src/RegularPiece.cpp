@@ -1,3 +1,4 @@
+// Template not final just example can change
 // Regular Piece function definitions
 #include "RegularPiece.h"
 #include <iostream>
