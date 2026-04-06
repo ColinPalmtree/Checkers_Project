@@ -5,6 +5,18 @@
 
 class Piece {
 public:
+	void setNum(player_num);
+	int getNum();
+
+	void setColor(color);
+	std::string getColor();
+
+	void setRow(row);
+	int getRow();
+
+	void setCol(col);
+	int getCol();
+
 	virtual move();
 	// getValidMoves();   what return type? we returning some array or whatever with all the possible new coords?
 	void displayPiece(); // need to wait until GUI is implemented for this to be of use
@@ -17,5 +29,6 @@ private:
 	*     - should it be an array/vector?
 	*     - should it be two separate int coords? (row, col)
 	*/
-	int m_position[8][4]; // stores position of piece on 8x4 dark spaces
+	int m_row; // row where piece is
+	int m_col; // column where piece is
 };
