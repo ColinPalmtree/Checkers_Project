@@ -1,3 +1,4 @@
+// Template not final just example can change
 // King Piece function definitions
 #include "KingPiece.h"
 #include <iostream>
