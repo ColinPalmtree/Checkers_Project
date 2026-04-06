@@ -1,3 +1,4 @@
+// Template not final just example can change
 // Board class function definitions
 #include "Board.h"
 #include "RegularPiece.h"
