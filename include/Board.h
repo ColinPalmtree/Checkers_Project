@@ -1,35 +1,65 @@
-// Board.h - Manages the 8x8 grid and all pieces
+/*
+Board.h Manages the 8x8 checkers grid of piece pointers 
+
+
+board shows composition game has a board, board has a 2d array
+of piece pointers. Board is the owner of  every Piece*
+and allocated them in init Board() deleting them whe their captured or created in king 
+*/
+
 #pragma once
 #include "Piece.h"
 #include <vector>
+#include <utility>
+#include <stdexcept>
 
 class Board {
 public:
-    // Constructor: initialize an empty board
-    Board();
+	Board();
+	`Board();
 
-    // Initialize the board with starting positions of pieces
-    void initBoard();
+	// copy and assignment are deleted; 
+	Board(const Board&) = delete;
+	Board& operator = (const Board&) = delete;
 
-    // Apply a move on the board (from current row/col to new row/col)
-    void applyMove(int fromRow, int fromCol, int toRow, int toCol);
+	// board detup 
+	//red on rows 0-2
+	// black on 7-5
 
-    // Check for captures/jumps after a move
-    void checkForCaptures(int row, int col);
+	void initBoard();
 
-    // Display board state (for console or debugging)
-    void displayBoard() const;
+	bool inBounds(int row, int col) const;
 
-    // Accessors
-    Piece* getPiece(int row, int col) const;
-    bool isEmpty(int row, int col) const;
+	// true if square is empty 
+	bool isEmpty(int row, int col) const;
+	// Returns the piece at (row, col), or null pointer
+	Piece* getPiece(int row, int col)const;
 
-    // Piece counters
-    int getRedCount() const { return redCount; }
-    int getBlackCount() const { return blackCount; }
+	int getRedCount() const { return m_redCount; }
+	int getBlackCount() const { return m_blackCount; }
 
-private:
-    Piece* grid[8][8];  // 2D array storing pointers to pieces (nullptr if empty)
-    int redCount;       // Number of red pieces remaining
-    int blackCount;     // Number of black pieces remaining
+	// Returns true if player has a move
+	bool playerHasMoves(PieceColor Player) const;
+
+	// returns the row col of every piece that can make a jump 
+	std::vector<std::pair<int, int>> getPiecesWithJumps(PieceColor player) const;
+	
+	// moveing 
+
+	// move piece from mv.from rowcol to mv. to rowcol
+	// if mv. isjump is true the piece ar mv capture is removed
+	//throws an error if out of bounds or illegal move 
+	void applyMove(const Move& mv);
+
+	// replace Reg Piece when gets to other side 
+	void promoteAt(int row, int col);
+
+	//print board
+	void displayBoard() const;
+
+Private:
+	Piece* m_grid[8][8]; // its all pointers 
+	int m_redCount; // red pieces still in poard
+	int m_blackCount; // blacks still on board 
+
 };

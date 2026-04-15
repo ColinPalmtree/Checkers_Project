@@ -1,18 +1,21 @@
-#pragma once
 
+//king piece.h the king checkers piece
+// COP 3003
+// created by board at Board:: promoteAt()
+// all 4 diagonal directions 
+
+
+#pragma once
 #include "Piece.h"
 
-class KingPiece : public Piece
-{
+class KingPiece : public Piece {
 public:
-    // the constructor passes everything to pieces constructor
-    KingPiece(int playerNum, const std::string& color, int row, int col);
-    virtual ~KingPiece() = default; // virtual destructor
+	// Passes color and starting position to the Piece constructor
+	   // KingPiece will then mark itself as a king in KingPiece.cpp	
+	KingPiece(PieceColor color, int row, int col);
 
-    void move(int toRow, int toCol) override;
-    // returns forward AND backward diagonal squares (kings move both directions)
+	virtual ~KingPiece() = default;
 
-    std::vector<std::pair<int,int>> getValidMoves() const override;
-    // unique to King piece
-
+	// returns all the moves for king piece 
+	std::vector<Move> getValidMoves(const Board& board) const override;
 };

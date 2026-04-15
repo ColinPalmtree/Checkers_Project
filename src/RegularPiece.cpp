@@ -1,47 +1,64 @@
-// Template not final just example can change
-// Regular Piece function definitions
 #include "RegularPiece.h"
-#include <iostream>
+#include "Board.h"
 
-RegularPiece::RegularPiece(Color c, int r, int col)
-    : Piece(c, r, col)
+namespace direction {
+	const int left = -1;
+	const int right = 1;
+}
+
+// constructor
+RegularPiece::RegularPiece(PieceColor color, int row, int col) : Piece(color, row, col)
 {
-    isKing = false; // Regular pieces start as non-kings
 }
 
-void RegularPiece::move(int newRow, int newCol) {
-    // Forward-only movement
-    std::cout << "RegularPiece moving from ("
-              << m_row << ", " << m_col << ") to ("
-              << newRow << ", " << newCol << ")\n";
+// regular get valid moves
+/*
 
-    m_row = newRow;
-    m_col = newCol;
-}
+movement is determined by color
+red moves down board
+black moves up
 
-std::vector<Move> RegularPiece::getValidMoves(const Board& board) const {
-    std::vector<Move> moves;
+2 types of moves are generated
+step - normal
+jump - capture
+both diagonals are checked
 
-    // Regular pieces move forward only:
-    // RED moves "down" (increasing row)
-    // BLACK moves "up" (decreasing row)
-    int direction = (m_color == RED) ? 1 : -1;
+*/
 
-    int nr1 = m_row + direction;
-    int nc1 = m_col + 1;
 
-    int nr2 = m_row + direction;
-    int nc2 = m_col - 1;
+	std::vector<Move> RegularPiece::getValidMoves(const Board & board) const
+	{
+		std::vector<Move> moves;
+		using namespace direction;
 
-    // Check diagonal-right
-    if (board.isValidPosition(nr1, nc1) && board.getPiece(nr1, nc1) == nullptr) {
-        moves.push_back({m_row, m_col, nr1, nc1});
-    }
+		int dir = (m_color == PieceColor::Red) ? 1 : -1;
 
-    // Check diagonal-left
-    if (board.isValidPosition(nr2, nc2) && board.getPiece(nr2, nc2) == nullptr) {
-        moves.push_back({m_row, m_col, nr2, nc2});
-    }
+		// check the forward diagonals
+		for (int dc : { left, right })
+		{
+			int nextrow = m_row + dir;
+			int nextcol = m_col + dc;
 
-    return moves;
-}
+			if (!board.inBounds(nextrow, nextcol)) continue;
+
+			Piece* neighbor = board.getPiece(nextrow, nextcol);
+
+			if (neighbor == nullptr)
+			{
+				// square is empty so this is a normal move
+				moves.push_back({ m_row, m_col, nextrow, nextcol, false, -1, -1 });
+			}
+			else if (neighbor->getColor() != m_color)
+			{
+				// square has an opponent piece, so check if jump is possible
+				int jumprow = nextrow + dir;
+				int jumpcol = nextcol + dc;
+
+				if (board.inBounds(jumprow, jumpcol) && board.isEmpty(jumprow, jumpcol))
+				{
+					moves.push_back({ m_row, m_col, jumprow, jumpcol, true, nextrow, nextcol });
+				}
+			}
+		}
+		return moves;
+	}

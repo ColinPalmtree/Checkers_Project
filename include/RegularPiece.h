@@ -1,19 +1,25 @@
+
+//RegularPiece.h   A standard checkers piece
+// COP 3003
+
+
+
 #pragma once
 #include "Piece.h"
 
-class RegularPiece : public Piece
-{
+
+class RegularPiece: public Piece {
 public:
-    // the constructor passes everything to Piece's constructor
-    RegularPiece(int playerNum, const std::string& color, int row, int col);
-    virtual ~RegularPiece() = default; // virtual destructor
+	// Passes color and startign position to constructor
+	// m_isking starts false auto bc piece constructor
+	RegularPiece(PieceColor color, int row, int col);
 
-    void move(int toRow, int toCol) override;
-    // get valid moves for this should only return forward diagonal squares
+	virtual ~RegularPiece() = default;
 
-    std::vector<std::pair<int,int>> getValidMoves() const override;
-    // unique to regular piece
-    void promote();
-    // creates a king piece for the same player when row 0 for red or row 7 for black
+	// returns all legal moves 
+		// forward only diaganol 
+		// and jumps 
+	std::vector<Move> getValidMoves(const Board& board) const override;
+
 
 };
