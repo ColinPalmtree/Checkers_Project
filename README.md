@@ -1,4 +1,10 @@
 # Checkers Game – COP 3003 Project  
+
+**Build Instructions:**
+Clone the repository into visual studio, right click the project file, and click build. 
+The built executable is found in .vs\x64\Release
+
+
 **Team Members:**  
 - Elijah Rose  
 - Estiward Casado Antigua  
@@ -165,6 +171,12 @@ Handled using `try/catch`:
 - Out‑of‑bounds board access  
 
 **Example:**
+From Game::executeMove(const Move& move)
 ```cpp
-if (!isValidMove(from, to))
-    throw runtime_error("Illegal move selected");
+try {
+	m_board.applyMove(move);
+}
+catch (const std::exception& e) {
+	m_statusMsg = std::string("Error: ") + e.what();
+	return;
+}
