@@ -1,7 +1,7 @@
 # Checkers Game – COP 3003 Project  
 
 **Build Instructions:**
-Clone the repository into visual studio, right click the project file, and click build
+Clone the repository into visual studio, right click the project file, and click build. 
 The built executable is found in .vs\x64\Release
 
 
