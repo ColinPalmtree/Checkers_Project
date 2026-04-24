@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\dll",
-    "\\include",
-    "\\src"
+    ""
   ],
-  "SelectedNode": "\\dll",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

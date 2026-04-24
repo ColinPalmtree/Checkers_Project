@@ -41,6 +41,15 @@
     <None Include="dll\release\sfml-system-3.dll" />
     <None Include="dll\release\sfml-window-3.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Black King.png" />
+    <Image Include="Assets\Black Piece.png" />
+    <Image Include="Assets\Red King.png" />
+    <Image Include="Assets\Red Piece.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Assets\arial.ttf" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <ProjectGuid>{5EB7647C-DD8F-D174-33B2-65A9D8F0C59A}</ProjectGuid>

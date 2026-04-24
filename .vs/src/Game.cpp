@@ -33,7 +33,7 @@ m_window(sf::VideoMode({ static_cast<unsigned>(WIN_W), static_cast<unsigned>(WIN
 	m_window.setFramerateLimit(60);
 
 	// load a font
-	m_fontLoaded = m_font.openFromFile("arial.ttf");
+	m_fontLoaded = m_font.openFromFile("Assets/arial.ttf");
 	
 	startNewGame();
 }
