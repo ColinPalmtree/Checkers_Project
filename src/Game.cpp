@@ -275,10 +275,10 @@ bool Game::checkWin() {
 		std::string winner;
 		// store winner in a string
 		if (m_currentPlayer == PieceColor::Red) {
-			winner = "Red";
+			winner = "Black";
 		}
 		else {
-			m_statusMsg = "Black";
+			winner = "Red";
 		}
 		m_statusMsg = winner + " wins!";
 		return true;
