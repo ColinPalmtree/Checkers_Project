@@ -4,6 +4,10 @@
 Clone the repository into visual studio, right click the project file, and click build. 
 The built executable is found in .vs\x64\Release
 
+**Contributions:""
+Elijah Rose made the bulk of the README, the PowerPoint, assets for the game and organized the files.
+Estiward Casado Antigua made the UML diagram, the Game class, the GUI, and also got everything to compile/build properly.
+Colin Pearson made the initial class structure, the logic for all the Piece classes, and the Board classes.
 
 **Team Members:**  
 - Elijah Rose  
