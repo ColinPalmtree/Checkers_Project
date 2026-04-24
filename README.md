@@ -9,6 +9,11 @@ The built executable is found in .vs\x64\Release. Visual Studio 2026 was used so
 - Estiward Casado Antigua made the UML diagram, the Game class, the GUI, and also got everything to compile/build properly.
 - Colin Pearson made the initial class structure, the logic for all the Piece classes, and the Board classes.
 
+**Ai Usage:**
+- Was used to help with debugging problems when we couldn't solve it.
+- Helped make template code that we learned from and wrote our own
+- It also helped us understand the SFML stuff as well as helped us learn the GUI
+
 **Team Members:**  
 - Elijah Rose  
 - Estiward Casado Antigua  
