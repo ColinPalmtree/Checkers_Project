@@ -165,6 +165,12 @@ Handled using `try/catch`:
 - Out‑of‑bounds board access  
 
 **Example:**
+From Game::executeMove(const Move& move)
 ```cpp
-if (!isValidMove(from, to))
-    throw runtime_error("Illegal move selected");
+try {
+	m_board.applyMove(move);
+}
+catch (const std::exception& e) {
+	m_statusMsg = std::string("Error: ") + e.what();
+	return;
+}
