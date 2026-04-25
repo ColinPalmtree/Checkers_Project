@@ -1,8 +1,14 @@
 # Checkers Game – COP 3003 Project  
 
 **Build Instructions:**
-Clone the repository into visual studio, right click the project file, and click build. 
-The built executable is found in .vs\x64\Release. Visual Studio 2026 was used so the build system may need to be changed to a previous one in the solution/project settings.
+- This project uses SFML 3.0.2 64 bit
+- Clone the repository into visual studio
+- Add the appropriate SFML folder (include and lib respectively) to your Additional Include directory and your Additional Library directory
+- More specifically:
+- Right click the project file and click Properties. Ensure that at the top of the screen, "Configuration: " is set to All Configurations. Then, navigate to C/C++ -> General -> Additional Include Directories. In Additional Include Directories, enter the drop down menu, click <Edit...>. Then click the folder icon. Find where your SFML is downloaded to, and inside of it find and select the "include" folder. Next, navigate to Linker -> General -> Additional Library Directories. Click the folder icon, find go to your SFML folder again, and find and select the "lib" folder. Click "Apply" and close the window.
+- Set the configuration to "Debug" on the top of the window.
+- You can either press the "Start Without Debugging" button or right click the project file and click "Build"
+- If you build from right clicking on the project file, navigate (from the .vs folder) to x64/Debug and click the .exe file
 
 **Contributions:** 
 - Elijah Rose made the bulk of the README, the PowerPoint, assets for the game and organized the files.
