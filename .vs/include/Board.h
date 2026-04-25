@@ -26,8 +26,8 @@ public:
 	// black on 7-5
 
 	void initBoard();
-
-	bool inBounds(int row, int col) const;
+	template<typename T>
+	bool inBounds(T row, T col) const;
 
 	// true if square is empty 
 	bool isEmpty(int row, int col) const;

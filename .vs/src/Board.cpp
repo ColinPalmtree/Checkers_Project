@@ -60,8 +60,8 @@ void Board::initBoard()
     m_redCount = 12;
     m_blackCount = 12;
 }
-
-bool Board::inBounds(int row, int col) const
+template <typename T>
+bool Board::inBounds(T row, T col) const
 {
     return row >= 0 && row < 8 && col >= 0 && col < 8;
 }
