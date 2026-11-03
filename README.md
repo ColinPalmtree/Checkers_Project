@@ -195,3 +195,11 @@ catch (const std::exception& e) {
 	m_statusMsg = std::string("Error: ") + e.what();
 	return;
 }
+Getting the Project
+Clone the repository from GitHub.
+
+Feedback
+Submit issues using the GitHub Issues page.
+
+Contributing
+Fork the repository and submit a pull request
